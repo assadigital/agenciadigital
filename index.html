@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Asesor Patrimonial Allianz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+.top-bar{
+width:100%;
+height:80px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 40px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:relative;	
+z-index:1000;
+}
+
+.top-left,
+.top-right{
+width:30%;
+display:flex;
+align-items:center;
+}
+
+.top-right{
+justify-content:flex-end;
+}
+
+.top-center{
+width:40%;
+text-align:center;
+font-size:3rem;
+font-weight:700;
+color:#001f4d;
+letter-spacing:4px;
+}
+
+.top-bar img{
+max-height:105px;
+width:auto;
+}
+
+
+@media(max-width:768px){
+
+.top-bar{
+height:auto;
+padding:15px;
+flex-direction:column;
+gap:15px;
+}
+
+.top-left,
+.top-right,
+.top-center{
+width:100%;
+justify-content:center;
+text-align:center;
+}
+
+.top-center{
+font-size:2rem;
+}
+
+.top-bar img{
+max-height:55px;
+}
+
+}
+
+
+.top-center{
+font-size:3.5rem;
+font-weight:800;
+color:#003781; /* Azul Allianz */
+letter-spacing:4px;
+text-transform:uppercase;
+}
+	
+
+
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5f7fa;
+color:#1e293b;
+}
+
+.hero{
+background-image:url('fondo-allianz.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:scroll;
+
+color:white;
+padding:60px 20px;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+}
+
+.hero *{
+position:relative;
+z-index:1;
+}
+
+
+
+
+
+
+
+.hero img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.hero h2{
+font-weight:300;
+font-size:1.1rem;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.logos{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.logo{
+max-height:100px;
+width:auto;
+background:white;
+padding:10px 20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+max-height:100px;
+width:auto;
+padding:10px;
+background:rgba(255,255,255,0.95);
+border-radius:10px;
+}
+
+
+
+
+
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#f4b400;
+color:#000;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+.section{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:40px;
+color:#003781;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.logo-info{
+display:block;
+max-height:80px;
+margin:0 auto 20px;
+width:auto;
+}
+
+
+
+.card{
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#003781;
+}
+
+.card p{
+line-height:1.6;
+font-size:.95rem;
+}
+
+.proceso{
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.proceso ul{
+list-style:none;
+}
+
+.proceso li{
+padding:12px 0;
+font-size:1rem;
+}
+
+.contacto{
+background:#003781;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.contacto h2{
+margin-bottom:20px;
+}
+
+.contacto p{
+margin-bottom:10px;
+}
+
+footer{
+padding:20px;
+text-align:center;
+font-size:.9rem;
+background:#001f4d;
+color:white;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+
+.proceso-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.proceso,
+.beneficios{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.proceso h3,
+.beneficios h3{
+color:#003781;
+margin-bottom:25px;
+font-size:1.5rem;
+text-align:center;
+}
+
+.proceso ul,
+.beneficios ul{
+list-style:none;
+}
+
+.proceso li,
+.beneficios li{
+padding:12px 0;
+line-height:1.6;
+}
+
+.beneficios{
+border-top:6px solid #f4b400;
+}
+
+@media(max-width:768px){
+
+.proceso-container{
+grid-template-columns:1fr;
+}
+
+}
+
+.beneficio-final{
+margin-top:20px;
+padding:15px;
+background:#eef5ff;
+border-left:5px solid #003781;
+font-weight:500;
+border-radius:10px;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<header class="top-bar">
+
+    <div class="top-left">
+        <img src="allianz-logo.png" alt="Allianz">
+    </div>
+
+    <div class="top-center">
+        ASSA
+    </div>
+
+    <div class="top-right">
+        <img src="gainback-logo.png" alt="Gainback">
+    </div>
+
+</header>
+<section class="hero">
+
+<h2>Agencia de seguros Soluciones Patrimoniales y Ahorro</h2>
+
+
+<h1>Construye, Protege y Haz Crecer tu Patrimonio</h1>
+
+<h2>
+Soluciones Allianz con acompañamiento profesional de Gainback
+</h2>
+
+<p>
+Nuestra misión es asesorar  y ayudar a personas, familias y empresarios a proteger su patrimonio,
+construir ahorro, inversión y seguridad financiera mediante soluciones
+personalizadas de Allianz.
+</p>
+
+<a href="https://wa.me/522943242462" class="btn">
+Quiero mi Diagnóstico Sin Costo
+</a>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Portafolio de Soluciones
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🛡 Protección Familiar</h3>
+<p>
+Protección económica para tu familia ante fallecimiento,
+invalidez o eventos inesperados.
+<br><br>
+• OptiMaxx Protección
+</p>
+</div>
+
+<div class="card">
+<h3>📈 Ahorro e Inversión</h3>
+<p>
+Construcción de patrimonio con estrategias de corto, mediano y largo plazo.
+<br><br>
+• OptiMaxx Plus
+<br>
+
+• OptiMaxx Elite
+</p>
+</div>
+
+<div class="card">
+<h3>🎓 Educación para Hijos</h3>
+<p>
+Planeación financiera para garantizar recursos educativos futuros para tus hijos o nietos.
+<br><br>
+• OptiMaxx Educación
+</p>
+</div>
+
+<div class="card">
+<h3>🏥 Gastos Médicos Mayores</h3>
+<p>
+Protección económica ante eventos que pueden afectar tu salud y cuidan tu patrimonio.
+<br><br>
+• Allianz GMM 
+</p>
+</div>
+
+<div class="card">
+<h3>🚗 Seguro de Auto</h3>
+<p>
+Protección integral para tu vehículo y responsabilidad civil.
+<br><br>
+• Allianz Auto
+</p>
+</div>
+
+<div class="card">
+<h3>🏠 Seguro de Hogar</h3>
+<p>
+Protección para vivienda, contenidos y responsabilidad familiar.
+<br><br>
+• Allianz Residencial
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Nuestro Proceso de Trabajo
+</h2>
+
+<div class="proceso-container">
+
+<div class="proceso">
+
+<h3>Análisis Personalizado</h3>
+
+<ul>
+<li>✅ Diagnóstico financiero sin costo</li>
+<li>✅ Identificación de riesgos y oportunidades</li>
+<li>✅ Diseño de estrategia financiera</li>
+<li>✅ Implementación de soluciones</li>
+<li>✅ Seguimiento y acompañamiento continuo</li>
+</ul>
+
+</div>
+
+<div class="beneficios">
+
+<h3>Beneficios para Ti</h3>
+
+<ul>
+<li>⭐ Mayor claridad sobre tu situación financiera actual</li>
+<li>⭐ Identificación de riesgos que podrían afectar tu patrimonio</li>
+<li>⭐ Estrategias personalizadas según tus objetivos</li>
+<li>⭐ Protección para tu familia y tu patrimonio</li>
+<li>⭐ Planeación de ahorro e inversión a largo plazo</li>
+<li>⭐ Acompañamiento profesional en cada etapa de tu vida financiera</li>
+<li>⭐ Toma de decisiones con información y respaldo profesional</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+<section class="section">
+
+<p class="beneficio-final">
+Tu diagnóstico no tiene costo y te permitirá conocer oportunidades de protección, ahorro e inversión que hoy no estás aprovechando.
+</p>
+
+
+
+
+
+<h2 class="section-title">
+Respaldo y Experiencia
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="allianz-logo.png" class="logo-info">
+<h3>🌎 ¿Quién es Allianz?</h3>
+
+<p>
+Allianz es una de las compañías financieras y aseguradoras más importantes del mundo, con presencia internacional y más de 130 años de experiencia en protección, ahorro e inversión.
+
+Actualmente brinda soluciones a millones de personas, familias y empresas, ofreciendo productos de vida, inversión, gastos médicos, auto, hogar y protección patrimonial.
+
+Su fortaleza financiera, experiencia global y compromiso con sus clientes la convierten en una de las marcas más reconocidas del sector asegurador.
+</p>
+
+</div>
+
+<div class="card">
+<img src="gainback-logo.png" class="logo-info">
+<h3>🚀 ¿Quién es Gainback?</h3>
+
+<p>
+Gainback es una promotoria especializada en el desarrollo de asesores financieros y patrimoniales de alto desempeño.
+
+Su enfoque está basado en capacitación continua, acompañamiento comercial, herramientas tecnológicas y metodologías de consultoría financiera para brindar un servicio profesional y personalizado a cada cliente.
+
+A través de Gainback, los clientes reciben atención cercana, seguimiento constante y soluciones alineadas a sus objetivos financieros de corto, mediano y largo plazo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div style="text-align:center;margin-top:40px;">
+
+<h3 style="color:#003781;">
+Experiencia Global + Atención Personalizada
+</h3>
+
+<p style="max-width:800px;margin:auto;line-height:1.8;">
+La combinación de la solidez internacional de Allianz y el acompañamiento profesional de Gainback permite ofrecer estrategias de protección, ahorro e inversión diseñadas para las necesidades específicas de cada persona, familia o empresa.
+</p>
+
+</div>
+
+
+
+
+<section class="contacto">
+
+<h2>
+Hoy es el momento de proteger lo que más valoras y construir el patrimonio que deseas tener en el futuro
+</h2>
+
+<p><strong>💬 WhatsApp:</strong>2943242462</p>
+
+<p><strong>Correo:</strong> segurosyahorroassa@gmail.com</p>
+
+<p><strong>Servicio Nacional:</strong> México</p>
+
+<a href="https://wa.me/5212943242462" class="btn">
+Quiero mi Diagnóstico
+</a>
+
+</section>
+
+<footer>
+© 2026 Asesor Patrimonial Allianz - Gainback
+</footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/5212943242462"
+target="_blank">
+💬
+</a>
+
+</body>
+</html>
